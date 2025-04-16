@@ -58,3 +58,62 @@ body.dark-mode {
   cursor: pointer;
   transition: 0.3s ease;
 }
+
+
+.logo {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: $primary-accent;
+}
+
+.hamburger-btn {
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: $light-text;
+
+  @media (min-width: 992px) {
+    display: none;
+  }
+}
+
+.nav-container {
+  background-color: $light-bg;
+  border-radius: 9999px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+
+  .nav-link-item {
+    cursor: pointer;
+    font-weight: 500;
+    color: $light-text;
+    transition: 0.3s ease;
+
+    &.active {
+      color: $primary-accent;
+      border-bottom: 2px solid $primary-accent;
+    }
+
+    &:hover {
+      color: $primary-accent;
+    }
+  }
+
+  @media (max-width: 991px) {
+    border-radius: 1rem;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.mode-toggle-btn {
+  background-color: $light-bg;
+  border: none;
+  border-radius: 50%;
+  padding: 0.6rem;
+  font-size: 1.2rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: 0.3s ease;
+}
