@@ -1,0 +1,48 @@
+body.dark-mode {
+  background-color: #1e1e1e;
+  color: #f0f0f0;
+}
+body.dark-mode .nav-container {
+  background-color: #2b2b2b;
+}
+body.dark-mode .nav-container .nav-link-item {
+  color: #f0f0f0;
+}
+body.dark-mode .nav-container .nav-link-item.active {
+  color: #00bfa6;
+  border-bottom: 2px solid #00bfa6;
+}
+body.dark-mode .mode-toggle-btn {
+  background-color: #1e1e1e;
+  color: #00bfa6;
+}
+
+.nav-container {
+  background-color: #ffffff;
+  border-radius: 9999px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+.nav-container .nav-link-item {
+  cursor: pointer;
+  font-weight: 500;
+  color: #333;
+  transition: 0.3s ease;
+}
+.nav-container .nav-link-item.active {
+  color: #00bfa6;
+  border-bottom: 2px solid #00bfa6;
+}
+.nav-container .nav-link-item:hover {
+  color: #00bfa6;
+}
+
+.mode-toggle-btn {
+  background-color: #ffffff;
+  border: none;
+  border-radius: 50%;
+  padding: 0.6rem;
+  font-size: 1.2rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: 0.3s ease;
+}/*# sourceMappingURL=navbar.css.map */

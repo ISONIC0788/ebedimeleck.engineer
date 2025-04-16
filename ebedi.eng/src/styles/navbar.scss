@@ -1,0 +1,60 @@
+// Light and dark mode variables
+$light-bg: #ffffff;
+$light-text: #333;
+$primary-accent: #00bfa6;
+$dark-bg: #1e1e1e;
+$dark-text: #f0f0f0;
+
+body.dark-mode {
+  background-color: $dark-bg;
+  color: $dark-text;
+
+  .nav-container {
+    background-color: lighten($dark-bg, 5%);
+    .nav-link-item {
+      color: $dark-text;
+      &.active {
+        color: $primary-accent;
+        border-bottom: 2px solid $primary-accent;
+      }
+    }
+  }
+
+  .mode-toggle-btn {
+    background-color: $dark-bg;
+    color: $primary-accent;
+  }
+}
+
+.nav-container {
+  background-color: $light-bg;
+  border-radius: 9999px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+
+  .nav-link-item {
+    cursor: pointer;
+    font-weight: 500;
+    color: $light-text;
+    transition: 0.3s ease;
+
+    &.active {
+      color: $primary-accent;
+      border-bottom: 2px solid $primary-accent;
+    }
+
+    &:hover {
+      color: $primary-accent;
+    }
+  }
+}
+
+.mode-toggle-btn {
+  background-color: $light-bg;
+  border: none;
+  border-radius: 50%;
+  padding: 0.6rem;
+  font-size: 1.2rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: 0.3s ease;
+}
