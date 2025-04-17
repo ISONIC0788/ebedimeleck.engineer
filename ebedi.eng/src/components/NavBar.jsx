@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import "../styles/navbar.scss";
 
+import { Link, useLocation } from "react-router-dom";
+
 const Navbar = () => {
+  const location  = useLocation();
   const [active, setActive] = useState("Home");
   const [darkMode, setDarkMode] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -16,6 +19,10 @@ const Navbar = () => {
   };
 
   const navLinks = ["Home", "About", "Articles", "Projects"];
+
+  const getPath = (link) =>(link ==="Home"?"/":`/${link.toLowerCase()}`);
+
+  const currentPath  = location.pathname;
 
   return (
     <div className="container-fluid py-3">
@@ -44,20 +51,26 @@ const Navbar = () => {
             isMenuOpen ? "d-flex flex-column align-item-center text-center w-100 b-drak " : "d-none"
           } d-lg-flex`}
         >
-          {navLinks.map((link) => (
-            <span
-              key={link}
-              className={`nav-link-item px-3 ${
-                active === link ? "active" : ""
-              }`}
-              onClick={() => {
-                setActive(link);
-                setIsMenuOpen(false); // Close menu on click (mobile)
-              }}
-            >
-              {link}
-            </span>
-          ))}
+          {navLinks.map((link) => {
+
+const path = getPath(link);
+
+             return(
+                   <Link
+                   key={link}
+                   to={path}
+                   className={`nav-link-item px-3 text-decoration-none ${
+                     active === link ? "active" : ""
+                    }`}
+                onClick={() => {
+                  setActive(link);
+                  setIsMenuOpen(false); // Close menu on click (mobile)
+                }}
+                 >
+                {link}
+             </Link>
+                 );
+          })}
         </div>
 
         {/* Mode Toggle on the Right */}

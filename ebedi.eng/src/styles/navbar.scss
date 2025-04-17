@@ -117,3 +117,37 @@ body.dark-mode {
   cursor: pointer;
   transition: 0.3s ease;
 }
+
+
+// footer
+
+.footer {
+  background-color: $light-bg;
+  color: $light-text;
+  padding: 1rem 0;
+  font-size: 0.875rem; // small text
+
+  a {
+    color: $light-text;
+    text-decoration: none;
+    margin-right: 1.5rem;
+    font-weight: 600;
+
+    &:hover {
+      color: $primary-accent;
+    }
+  }
+}
+
+body.dark-mode .footer {
+  background-color: $dark-bg;
+  color: $dark-text;
+
+  a {
+    color: $dark-text;
+
+    &:hover {
+      color: $primary-accent;
+    }
+  }
+}
