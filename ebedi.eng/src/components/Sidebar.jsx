@@ -7,14 +7,14 @@ import santech  from '../../public/santech.PNG'
 function Sidebar() {
   return (
   
-       <Card className="p-3 shadow-sm sidebar-card mb-4">
+       <Card className="p-3 shadow-sm sidebar-card mb-4 mt-5">
       <h5 className="mb-3 fw-bold">Work</h5>
 
       {/* Job #1 */}
       <div className="d-flex align-items-center mb-3">
         <img
           src={santech}
-          alt="MININFRA"
+          alt="SANTECH RWANDA"
           className="rounded-circle me-2"
         />
         <div>

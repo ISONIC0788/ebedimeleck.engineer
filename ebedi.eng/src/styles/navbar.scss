@@ -178,7 +178,7 @@ body.dark-mode .footer {
 .hero-section {
   background-color: $light-bg;
   color: $light-text;
-  min-height: 100vh;
+  min-height: 80vh;
   display: flex;
   align-items: center;
 
@@ -295,3 +295,100 @@ body.dark-mode {
   // text-decoration: underline;
   transition: all 0.3s ease;
 }
+
+
+
+.portfolio-card {
+  background-color: $light-bg;
+  color: $light-text;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+
+  .title-text {
+    color: $light-text;
+  }
+
+  .lead-text {
+    color: $text-muted-light;
+  }
+
+  .profile-img {
+    max-height: 300px;
+    object-fit: cover;
+    border: 2px solid $primary-accent;
+  }
+
+  .social-links a {
+    color: $light-text;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+
+    &:hover {
+      color: $primary-accent;
+    }
+  }
+}
+
+// Dark Mode Styles
+body.dark-mode .portfolio-card {
+  background-color: $dark-bg;
+  color: $dark-text;
+
+  .title-text {
+    color: $dark-text;
+  }
+
+  .lead-text {
+    color: $text-muted-dark;
+  }
+
+  .social-links a {
+    color: $dark-text;
+
+    &:hover {
+      color: $primary-accent;
+    }
+  }
+
+  .profile-img {
+    border-color: lighten($primary-accent, 10%);
+  }
+}
+
+
+
+
+// about annimtion
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.bounce-on-load {
+  animation: bounce 1s ease;
+}
+
+.animated-shadow {
+  border-radius: 10px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.animated-shadow:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
+}
+
+
+body.dark-mode .animated-shadow:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px #00bfa6;
+}
+

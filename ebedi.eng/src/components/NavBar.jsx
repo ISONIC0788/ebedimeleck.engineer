@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "../styles/navbar.scss";
 
 import { Link, useLocation } from "react-router-dom";
+import { FaMoon, FaSun } from "react-icons/fa";
 
 const Navbar = () => {
   const location  = useLocation();
@@ -20,7 +21,7 @@ const Navbar = () => {
 
   const navLinks = ["Home", "About", "Articles", "Projects"];
 
-  const getPath = (link) =>(link ==="Home"?"/":`/${link.toLowerCase()}`);
+  const getPath = (link) =>(link ===navLinks ?"/":`/${link.toLowerCase()}`);
 
   const currentPath  = location.pathname;
 
@@ -74,8 +75,11 @@ const path = getPath(link);
         </div>
 
         {/* Mode Toggle on the Right */}
-        <button className="mode-toggle-btn ms-3" onClick={toggleMode}>
-          {darkMode ? "🌙" : "🌞"}
+        <button className="mode-toggle-btn ms-3 " onClick={toggleMode}>
+          {darkMode ?  <i className="bi bi-moon-fill"></i> : <i className="bi bi-sun-fill"></i>}  
+          {/* // <FaMoon /> : <FaSun /> */}
+          {/* // "🌙" : "🌞" */}
+          
         </button>
       </div>
     </div>
