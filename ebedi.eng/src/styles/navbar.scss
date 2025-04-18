@@ -155,7 +155,7 @@ body.dark-mode {
 
 body.dark-mode .footer {
   background-color: $dark-bg;
-  color: $dark-text;
+  color: $dark-text !important;
 
   a {
     color: $dark-text;
@@ -165,6 +165,8 @@ body.dark-mode .footer {
     }
   }
 }
+
+
 
 
 
@@ -228,4 +230,67 @@ body.dark-mode .footer {
       color: $dark-text;
     }
   }
+}
+
+
+.sidebar-card {
+  background-color: $light-bg;
+  color: $light-text;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border:  0.5px solid #0a6847;
+
+  .text-muted {
+    color: $text-muted-light;
+  }
+
+  img {
+    width: 32px;
+    height: 32px;
+    object-fit: cover;
+    border: 2px solid $primary-accent;
+  }
+}
+
+// Dark Mode Styles
+body.dark-mode .sidebar-card {
+  background-color: $dark-bg;
+  color: $dark-text ;
+  // border:  1px solid #0a6847 ;
+
+  .text-muted {
+    color: $text-muted-dark !important;
+  }
+
+  img {
+    border-color: lighten($primary-accent, 15%);
+  }
+}
+
+
+
+body.dark-mode {
+  .dark-mode-card {
+    background-color: #1e1e1e !important;
+    color: #f0f0f0 !important;
+
+    .text-muted {
+      color: #b0b0b0 !important;
+    }
+
+    a {
+      color: #00bfa6;
+    }
+  }
+}
+
+
+
+.article-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+
+  border:  1px solid #00bfa6 ; /* darker green or any shade you want   #0a6847*/
+  // text-decoration: underline;
+  transition: all 0.3s ease;
 }

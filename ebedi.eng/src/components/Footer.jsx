@@ -27,7 +27,7 @@ function Footer() {
               }
             </div>
             {/* right */}
-            <div  className=' text-end  mt-2 mt-md-0'>
+            <div  className=' text-end  mt-2 mt-md-0 text-muted '>
 
               {/* text-muted */}
               &copy; {currentYear} {developerName} All rights reserved
