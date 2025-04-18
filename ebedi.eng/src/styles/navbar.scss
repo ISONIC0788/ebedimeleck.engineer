@@ -89,6 +89,7 @@ body.dark-mode {
   background-color: $light-bg;
   border-radius: 9999px;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+ 
   backdrop-filter: blur(10px);
 
   .nav-link-item {

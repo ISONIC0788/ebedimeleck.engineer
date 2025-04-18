@@ -19,7 +19,7 @@ const Hero = () => {
             Solopreneur, and Open-source enthusiast.
           </h1>
           <p className="lead">
-            I'm Ebedi Meleck, a software engineer passionate about creating sharing and  crafiting solution . I love building software,
+            I'm Ebedi Meleck, IT student and a software engineer at RP Karongi College passionate about creating sharing and  crafiting solution . I love building software,
             writing insightful articles, and passing on my knowledge.
           </p>
 
