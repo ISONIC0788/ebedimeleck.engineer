@@ -392,3 +392,15 @@ body.dark-mode .animated-shadow:hover {
   box-shadow: 0 8px 25px #00bfa6;
 }
 
+.hello-section {
+  // background-color: lighten($primary-accent, 45%);
+  // border-radius: 1rem;
+  // margin-top: 2rem;
+
+  button {
+    transition: transform 0.2s ease;
+    &:hover {
+      transform: translateY(-2px);
+    }
+  }
+}

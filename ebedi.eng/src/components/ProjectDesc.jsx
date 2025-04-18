@@ -8,11 +8,13 @@ import { FaCode, FaLightbulb, FaHeart } from "react-icons/fa";
 
 function ProjectDesc() {
   return (
-    <section className="hello-section container py-5 text-center">
-     <h1 className="display-7 fw-bold mb-3">
+    <section className="hello-section container py-5  d-flex justify-content-start">
+        {/* text-center */}
+        <div className='  '>
+        <h1 className="display-8 fw-bold mb-3  ">
         Crafting Code, Sparking Change: <br className="d-none d-md-block" />
         My Mission to Leave a Mark on the World
-      </h1>
+       </h1>
 
       <p className="container fs-7 mb-4">
         I’ve built many small projects over the years, but these are the ones I’m most proud of.
@@ -32,6 +34,9 @@ function ProjectDesc() {
           Support the Mission
         </button>
       </div>
+
+        </div>
+    
     </section>
   )
 }
