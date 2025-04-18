@@ -89,6 +89,7 @@ body.dark-mode {
   background-color: $light-bg;
   border-radius: 9999px;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(10px);
 
   .nav-link-item {
     cursor: pointer;
@@ -107,10 +108,16 @@ body.dark-mode {
   }
 
   @media (max-width: 991px) {
-    border-radius: 1rem;
-    width: 100%;
+    // border-radius: 1rem;
+    border-radius: none;
+        width: 100%;
     flex-direction: column;
-    align-items: flex-start;
+    // align-items: flex-start;
+    align-items: center;
+    position: absolute;
+    top: 5rem;
+    backdrop-filter: blur(10px);
+
   }
 }
 
