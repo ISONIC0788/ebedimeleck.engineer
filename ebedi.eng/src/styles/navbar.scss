@@ -404,3 +404,102 @@ body.dark-mode .animated-shadow:hover {
     }
   }
 }
+
+
+
+
+
+// project section 
+
+.projects-section {
+  background-color: transparent;
+
+  h2 {
+    color: inherit;
+  }
+
+  .lead {
+    max-width: 720px;
+    margin: 0 auto;
+    color: $text-muted-dark;
+  }
+  // .lead-text {
+  //   color: $text-muted-dark;
+  // }
+
+  .sidebar-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 1rem;
+   
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 191, 166, 0.1);
+      // background-color: $light-bg;
+    }
+    
+    a {
+      font-weight: 500;
+      color: $primary-accent;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.projects-section .lead {
+  max-width: 720px;
+  margin: 0 auto;
+  font-size: 1.125rem;
+  line-height: 1.8;
+}
+
+
+/* LoadingDots.css */
+/* LoadingDots.css */
+.loading-container {
+  font-size: 3rem; /* Increase font size for larger dots */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dot {
+  animation: blink 1.5s infinite steps(1);
+  opacity: 0;
+  margin: 0 5px;
+  font-weight: bold; /* Make the dots bold */
+  color: #00bfa6; /* Primary green color */
+  // box-shadow: 0 4px 15px rgba(0, 191, 166, 0.4); /* Green box shadow */
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.dot:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.dot:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+.dot:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+/* Hover Effect */
+.dot:hover {
+  transform: scale(1.2);
+  transition: transform 0.3s ease;
+}

@@ -40,10 +40,13 @@ function PortfolioCard() {
           <p className="mt-3 lead-text">
           With a growing command of languages like Java, JavaScript (React, Vite), Node.js, and more, Meleck blends clean code with thoughtful UI design, often 
           incorporating light/dark mode, animations, and responsive layouts. He’s not only a coder, but also a <strong>problem-solver with purpose</strong> 
+          ,<strong>Code with Purpose. Create with Impact</strong>
+          <strong>,Shaping Tomorrow One Line of Code at a Time.</strong>
           </p>
           <p className="mt-3 lead-text">
           Whether building systems like the Driver Trip Log , Car washing Booking app, or contributing to open-source, Meleck’s journey is marked by learning, building, and lifting others as he grows
           </p>
+       
 
           <p className="lead-text">
             I believe in the power of learning—every project, every challenge is an
@@ -62,7 +65,7 @@ function PortfolioCard() {
           />
 
           <div className="mt-5 d-flex flex-column gap-3 align-items-start social-links">
-            <a href="https://x.com" target="_blank" rel="noopener noreferrer" className="px-4">
+            <a href="https://x.com/EbediMeleck?s=09" target="_blank" rel="noopener noreferrer" className="px-4">
             <FaXTwitter className="me-2"/> Follow on X
             </a>
             <a href="https://github.com/ISONIC0788" target="_blank" rel="noopener noreferrer" className="px-4">
@@ -76,6 +79,7 @@ function PortfolioCard() {
             <a href="mailto:ituzeebedi12@gmail.com " className="mt-3 border-top px-4 py-4">
               <i className="bi bi-envelope me-2"></i> ituzeebedi12@gmail.com
             </a>
+          
 
             <a 
   href="https://www.linkedin.com/in/mentor-profile" 

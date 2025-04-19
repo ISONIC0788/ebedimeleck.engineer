@@ -25,7 +25,7 @@ const Hero = () => {
           </p>
 
           <div className="social-icons mt-4">
-            <a href="#"><FaXTwitter size={20} /></a>
+            <a href="https://x.com/EbediMeleck?s=09" target="_blank" rel="noopener noreferrer"><FaXTwitter size={20} /></a>
             <a href="https://github.com/ISONIC0788" target="_blank" rel="noopener noreferrer"><FaGithub size={20} /></a>
             <a href="https://www.linkedin.com/in/ituze-agacyo-ebed-meleck-65a13b2b7/" target="_blank" rel="noopener noreferrer"><FaLinkedin size={20} /></a>
           </div>
