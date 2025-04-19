@@ -16,12 +16,12 @@ const Hero = () => {
         />
         <div className="ms-md-4 text-center text-md-start">
           <h1 className="fw-bold mb-3 title-name">
-            Software Engineer, <br />
+            Software Engineer, IT Student <br />
             Solopreneur, and Open-source enthusiast.
           </h1>
           <p className="lead">
             I'm Ebedi Meleck, IT student and a software engineer at RP Karongi College passionate about creating sharing and  crafiting solution . I love building software,
-            writing insightful articles, and passing on my knowledge.
+            writing insightful  articles and drawing , and passing on my knowledge.
           </p>
 
           <div className="social-icons mt-4">
