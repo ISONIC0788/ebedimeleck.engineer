@@ -20,7 +20,7 @@ function Sidebar() {
         <div>
           <strong>SANTECH - RWANDA</strong>
           <div className="text-muted small">
-            Software Developer — Match 2022 - April 2022
+            Software Developer — March 2022 - April 2022
           </div>
         </div>
       </div>

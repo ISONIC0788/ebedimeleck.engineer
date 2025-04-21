@@ -64,7 +64,7 @@ function Footer() {
           </div>
 
           {/* Right */}
-          <div className='text-end mt-2 mt-md-0 lead-text'>
+          <div className='text-end text-sm-start mt-2 mt-md-0 lead-text'>
             {/* Text-muted */}
             &copy; {currentYear} {developerName} All rights reserved
           </div>

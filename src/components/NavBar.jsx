@@ -52,7 +52,7 @@ const Navbar = () => {
       <div className="d-flex justify-content-around align-items-center flex-wrap">
         {/* Left: Logo and Hamburger */}
         <div>
-          <span className="logo"> &lt;/ebedi&gt;</span>
+          <span className="logo"> &lt;ebedi/&gt;</span>
 
           <button
             className="d-lg-none px-5 hamburger-btn"

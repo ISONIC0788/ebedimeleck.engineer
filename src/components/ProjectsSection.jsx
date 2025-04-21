@@ -26,7 +26,7 @@ const projects = [
     description: 'The system will allow customers to book services online, track service status, and enable admins to manage staff and bookings dashbord',
     tags: [ 'Web App','Author'],
     link: 'https://github.com/ISONIC0788/CAR_WASHING_M_S',
-    icon: '🥗',
+    icon: '🚍',
     linkName:'Car Washing M S ',
   },
 //   {

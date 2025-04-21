@@ -32,7 +32,7 @@ function PortfolioCard() {
           </p>
 
           <p className="mt-3 lead-text">
-          He’s the founder of <strong>Ebyte Code Labs</strong>, a tech hub that transforms ideas into meaningful solutions—whether
+          H's currently Building my empire in technology  called  <strong>Ebyte Code Labs</strong>, a tech hub that transforms ideas into meaningful solutions—whether
            it's job-matching platforms, digital automation tools, or booking systems. His projects aren’t just assignments—they’re
             stepping stones for real impact.
 
