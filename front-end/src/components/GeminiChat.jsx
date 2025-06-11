@@ -51,10 +51,10 @@ function GeminiChat() {
       }, 400);
       return;
     }
-
+   const baseURL = "https://ebedimeleck-engineer.onrender.com"|| "http://localhost:5000";
     // Call Gemini backend
     try {
-      const res = await fetch("http://localhost:5000/ask", {
+      const res = await fetch(`${baseURL}/ask`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ prompt: trimmedPrompt }),
