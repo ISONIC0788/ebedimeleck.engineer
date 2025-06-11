@@ -41,7 +41,7 @@ const Navbar = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  const navLinks = ["Home", "About", "Articles", "Projects"];
+  const navLinks = ["Home", "About", "Articles", "Projects","eMarc.ai"];
 
   const getPath = (link) => (link === navLinks ? "/" : `/${link.toLowerCase()}`);
 

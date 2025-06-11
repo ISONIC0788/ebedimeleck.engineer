@@ -7,7 +7,8 @@ function Footer() {
   const FooteLink = [
     { name: "About", href: "/about" },
     { name: "Articles", href: "/Articles" },
-    { name: "Projects", href: "/Projects" }
+    { name: "Projects", href: "/Projects" },
+    { name:"eMarc.ai" , href:"/eMarc.ai"}
   ];
 
   const currentYear = new Date().getFullYear();
