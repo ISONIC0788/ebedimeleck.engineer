@@ -882,3 +882,25 @@ body.dark-mode .bar-loader span {
 .chat-input::placeholder {
   color: #bbb;                  /* Lighter placeholder color */
 }
+
+// src/pages/NotFound.scss
+.not-found {
+  min-height: 100vh;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+
+  h1 {
+    font-weight: 700;
+    font-size: 6rem;
+  }
+
+  p {
+    font-size: 1.25rem;
+    color: #6c757d; // Bootstrap's secondary text color
+  }
+
+  .btn {
+    padding: 0.6rem 1.2rem;
+    font-size: 1rem;
+  }
+}

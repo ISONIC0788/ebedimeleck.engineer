@@ -6,6 +6,7 @@ import About from './pages/About';
 import Articles from './pages/Articles';
 import Projects from './pages/Projects';
 import EmarkAi from './pages/EmarkAi';
+import NoteFound from './pages/NoteFound';
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
         <Route path='/articles' element ={<Articles/>}/>
         <Route path='/projects' element ={<Projects/>}/>
         <Route path='/eMarc.ai' element ={<EmarkAi/>}/>
+        <Route path='*' element ={<NoteFound/>}/>
        </Routes>
      </BrowserRouter>
     
