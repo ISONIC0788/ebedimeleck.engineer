@@ -1,14 +1,17 @@
 // Light and dark mode variables
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+body {
+  font-family: 'Ubuntu', sans-serif;
+}
+
+
 $light-bg: #ffffff;
 $light-text: #333;
 $primary-accent: #00bfa6;
 $dark-bg: #1e1e1e;
 $dark-text: #f0f0f0;
 
-// $light-bg: #ffffff;
-// $light-text: #333333;
-// $dark-bg: #1e1e1e;
-// $dark-text: #f0f0f0;
+
 $text-muted-light: #555555;
 $text-muted-dark: #b0b0b0;
 
@@ -66,7 +69,6 @@ body.dark-mode {
   transition: 0.3s ease;
 }
 
-
 .logo {
   font-size: 1.4rem;
   font-weight: bold;
@@ -89,7 +91,7 @@ body.dark-mode {
   background-color: $light-bg;
   border-radius: 9999px;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
- 
+
   backdrop-filter: blur(10px);
 
   .nav-link-item {
@@ -111,14 +113,13 @@ body.dark-mode {
   @media (max-width: 991px) {
     // border-radius: 1rem;
     border-radius: none;
-        width: 100%;
+    width: 100%;
     flex-direction: column;
     // align-items: flex-start;
     align-items: center;
     position: absolute;
     top: 5rem;
     backdrop-filter: blur(10px);
-
   }
 }
 
@@ -132,7 +133,6 @@ body.dark-mode {
   cursor: pointer;
   transition: 0.3s ease;
 }
-
 
 // footer
 
@@ -167,13 +167,7 @@ body.dark-mode .footer {
   }
 }
 
-
-
-
-
 //hero.scss
-
-
 
 .hero-section {
   background-color: $light-bg;
@@ -188,7 +182,7 @@ body.dark-mode .footer {
     object-fit: cover;
     border: 4px solid $primary-accent;
   }
-    // h1
+  // h1
   .title-name {
     font-size: 2rem;
     font-weight: 700;
@@ -223,7 +217,7 @@ body.dark-mode .footer {
     .lead {
       color: $text-muted-dark;
     }
-    .title-name{
+    .title-name {
       color: #f0f0f0;
     }
 
@@ -233,12 +227,11 @@ body.dark-mode .footer {
   }
 }
 
-
 .sidebar-card {
   background-color: $light-bg;
   color: $light-text;
   transition: background-color 0.3s ease, color 0.3s ease;
-  border:  0.5px solid #0a6847;
+  border: 0.5px solid #0a6847;
 
   .text-muted {
     color: $text-muted-light;
@@ -255,7 +248,7 @@ body.dark-mode .footer {
 // Dark Mode Styles
 body.dark-mode .sidebar-card {
   background-color: $dark-bg;
-  color: $dark-text ;
+  color: $dark-text;
   // border:  1px solid #0a6847 ;
 
   .text-muted {
@@ -266,8 +259,6 @@ body.dark-mode .sidebar-card {
     border-color: lighten($primary-accent, 15%);
   }
 }
-
-
 
 body.dark-mode {
   .dark-mode-card {
@@ -284,19 +275,15 @@ body.dark-mode {
   }
 }
 
-
-
 .article-card:hover {
   transform: translateY(-3px);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
 
-  border:  1px solid #00bfa6 ; /* darker green or any shade you want   #0a6847*/
+  border: 1px solid #00bfa6; /* darker green or any shade you want   #0a6847*/
   // text-decoration: underline;
   transition: all 0.3s ease;
 }
-
-
 
 .portfolio-card {
   background-color: $light-bg;
@@ -356,13 +343,11 @@ body.dark-mode .portfolio-card {
   }
 }
 
-
-
-
 // about annimtion
 
 @keyframes bounce {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0);
   }
 
@@ -386,7 +371,6 @@ body.dark-mode .portfolio-card {
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
 }
 
-
 body.dark-mode .animated-shadow:hover {
   transform: scale(1.05);
   box-shadow: 0 8px 25px #00bfa6;
@@ -405,11 +389,7 @@ body.dark-mode .animated-shadow:hover {
   }
 }
 
-
-
-
-
-// project section 
+// project section
 
 .projects-section {
   background-color: transparent;
@@ -430,13 +410,13 @@ body.dark-mode .animated-shadow:hover {
   .sidebar-card {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     border-radius: 1rem;
-   
+
     &:hover {
       transform: translateY(-5px);
       box-shadow: 0 10px 20px rgba(0, 191, 166, 0.1);
       // background-color: $light-bg;
     }
-    
+
     a {
       font-weight: 500;
       color: $primary-accent;
@@ -454,7 +434,6 @@ body.dark-mode .animated-shadow:hover {
   font-size: 1.125rem;
   line-height: 1.8;
 }
-
 
 /* LoadingDots.css */
 /* LoadingDots.css */
@@ -504,51 +483,6 @@ body.dark-mode .animated-shadow:hover {
   transition: transform 0.3s ease;
 }
 
-
-
-// .ask-gemini-btn {
-//   background-color: $primary-accent;
-//   color: white;
-//   border: 2px solid darken($primary-accent, 10%);
-//   padding: 0.6rem 1.2rem;
-//   border-radius: 0.5rem;
-//   font-weight: 600;
-//   font-size: 1rem;
-//   cursor: pointer;
-//   transition: all 0.3s ease;
-//   position: relative;
-
-//   &:hover {
-//     background-color: darken($primary-accent, 5%);
-//     transform: translateY(-1px);
-//   }
-
-//   &.loading {
-//     pointer-events: none;
-//     opacity: 0.7;
-
-//     &::after {
-//       content: '';
-//       position: absolute;
-//       right: 1rem;
-//       top: 50%;
-//       width: 16px;
-//       height: 16px;
-//       margin-top: -8px;
-//       border: 2px solid white;
-//       border-top-color: transparent;
-//       border-radius: 50%;
-//       animation: spin 0.8s linear infinite;
-//     }
-//   }
-// }
-
-// @keyframes spin {
-//   0% { transform: rotate(0deg); }
-//   100% { transform: rotate(360deg); }
-// }
-
-
 .chat-container {
   display: flex;
   justify-content: center;
@@ -582,7 +516,8 @@ body.dark-mode .animated-shadow:hover {
   margin-bottom: 1.25rem;
 }
 
-.user-message, .bot-response {
+.user-message,
+.bot-response {
   background-color: #f5f5f5;
   padding: 0.75rem 1rem;
   border-radius: 10px;
@@ -609,19 +544,6 @@ body.dark-mode .animated-shadow:hover {
 }
 
 /* Button Styling */
-.ask-gemini-btn {
-  background-color: #00bfa6;
-  color: white;
-  border: 2px solid #009f8d;
-  padding: 0.6rem 1.2rem;
-  border-radius: 0.5rem;
-  font-weight: 600;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  position: relative;
-  align-self: flex-end;
-}
 
 .ask-gemini-btn:hover {
   background-color: #00a893;
@@ -633,7 +555,7 @@ body.dark-mode .animated-shadow:hover {
 }
 
 .ask-gemini-btn.loading::after {
-  content: '';
+  content: "";
   position: absolute;
   right: 1rem;
   top: 50%;
@@ -647,8 +569,12 @@ body.dark-mode .animated-shadow:hover {
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .loading-bar {
@@ -684,7 +610,8 @@ body.dark-mode .animated-shadow:hover {
 }
 
 @keyframes loading-bar {
-  0%, 100% {
+  0%,
+  100% {
     transform: scaleY(0.6);
   }
   50% {
@@ -739,7 +666,9 @@ body.dark-mode .animated-shadow:hover {
   justify-content: start;
   align-items: center;
 }
-
+.suggestion-btn {
+  border: 1px solid #004d40;
+}
 .bar-loader {
   display: flex;
   gap: 6px;
@@ -760,7 +689,8 @@ body.dark-mode .animated-shadow:hover {
 }
 
 @keyframes loading-bar {
-  0%, 100% {
+  0%,
+  100% {
     transform: scaleY(0.6);
   }
   50% {
@@ -788,35 +718,35 @@ body.dark-mode .animated-shadow:hover {
   color: #2e7d32;
 }
 
-
-
 .chat-body {
-  max-height: 400px;  /* or whatever height you want */
+  max-height: 400px; /* or whatever height you want */
   overflow-y: scroll;
 
   /* Hide scrollbar for Chrome, Safari and Opera */
-  scrollbar-width: none;  /* Firefox */
-  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
 }
 
 .chat-body::-webkit-scrollbar {
   display: none; /* Chrome, Safari and Opera */
 }
 
+.suggestion-btn {
+  border: 1px solid #004d40;
+  font-size: 11px;            /* ✅ No quotes */
+  color: #999;
+  opacity: 0.9;
+  font-style: italic;         /* ✅ No quotes */
+  border-radius: 5rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
 
- .suggestion-btn {
-          border: 1px solid #ccc;
-          background-color: #f9f9f9;
-          border-radius: 20px;
-          // padding: 5px;
-          cursor: pointer;
-          transition: background-color 0.2s;
-        }
-        .suggestion-btn:hover {
-          background-color: #e4e4e4;
-        }
+.suggestion-btn:hover {
+  background-color: #e4e4e4;
+}
 
-        .chat-container {
+.chat-container {
   background: #f9f9f9;
   color: #000;
 
@@ -833,7 +763,8 @@ body.dark-mode .animated-shadow:hover {
       background: #252525;
     }
 
-    .user-bubble, .gemini-bubble {
+    .user-bubble,
+    .gemini-bubble {
       background: #333;
       color: #fff;
     }
@@ -849,7 +780,6 @@ body.dark-mode .animated-shadow:hover {
     }
   }
 }
-
 
 .bubble-content {
   display: flex;
@@ -874,13 +804,13 @@ body.dark-mode .bar-loader span {
 }
 
 .chat-input {
-  background-color: black;      /* Background black */
-  color: white;                 /* Text color white for readability */
-  border: 1px solid #444;       /* Optional: border color for contrast */
+  background-color: black; /* Background black */
+  color: white; /* Text color white for readability */
+  border: 1px solid #444; /* Optional: border color for contrast */
 }
 
 .chat-input::placeholder {
-  color: #bbb;                  /* Lighter placeholder color */
+  color: #bbb; /* Lighter placeholder color */
 }
 
 // src/pages/NotFound.scss
@@ -903,4 +833,23 @@ body.dark-mode .bar-loader span {
     padding: 0.6rem 1.2rem;
     font-size: 1rem;
   }
+}
+
+.circle-btn {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  padding: 0;
+  font-size: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.circle-btn:hover {
+  background-color: #0056b3;
 }

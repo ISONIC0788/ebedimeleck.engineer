@@ -22,7 +22,9 @@ const Navbar = () => {
       }
     } else {
       // If no saved theme, use system preference
-      const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      const systemTheme = window.matchMedia(
+        "(prefers-color-scheme: dark)"
+      ).matches;
       setDarkMode(systemTheme);
       if (systemTheme) {
         document.body.classList.add("dark-mode");
@@ -41,9 +43,10 @@ const Navbar = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  const navLinks = ["Home", "About", "Articles", "Projects","eMarc.ai"];
+  const navLinks = ["Home", "About", "Articles", "Projects", "eMarc.ai"];
 
-  const getPath = (link) => (link === navLinks ? "/" : `/${link.toLowerCase()}`);
+  const getPath = (link) =>
+    link === navLinks ? "/" : `/${link.toLowerCase()}`;
 
   const currentPath = location.pathname;
 
@@ -66,7 +69,9 @@ const Navbar = () => {
         {/* Navigation */}
         <div
           className={`nav-container rounded-pill shadow-sm p-2 px-3 ${
-            isMenuOpen ? "d-flex flex-column align-item-center text-center w-100 b-drak" : "d-none"
+            isMenuOpen
+              ? "d-flex flex-column align-item-center text-center w-100 b-drak"
+              : "d-none"
           } d-lg-flex`}
         >
           {navLinks.map((link) => {
