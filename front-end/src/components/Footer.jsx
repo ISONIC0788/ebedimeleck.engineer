@@ -61,8 +61,8 @@ function Footer() {
         </div>
       </div>
 
-      {/* 2. FOOTER LINKS BAR (Bottom) */}
-      <div className="border-t border-gray-900 bg-[#050505] pt-10 pb-8">
+      {/* 2. FOOTER LINKS BAR (Bottom) border-t border-gray-900 */}
+      <div className=" bg-[#050505] pt-10 pb-8">
         <div className="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
           
           {/* Left: Links & Clock */}
