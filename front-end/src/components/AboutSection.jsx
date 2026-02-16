@@ -1,30 +1,7 @@
 import React from "react";
-import { 
-  SiTypescript, 
-  SiNextdotjs, 
-  SiJavascript, 
-  SiNestjs, 
-  SiQuarkus, 
-  SiAntdesign, 
-  SiTailwindcss 
-} from "react-icons/si";
-import { FaJava, FaReact, FaUserTie, FaGlobe, FaLinkedin } from "react-icons/fa";
-import { TbBrandReactNative } from "react-icons/tb";
+import { FaUserTie, FaGlobe, FaLinkedin } from "react-icons/fa";
 import profilephoto from "../../public/profilephoto.jpg"; 
-
-// --- Skills Data ---
-const skills = [
-  { name: "TypeScript", icon: <SiTypescript className="text-blue-400" /> },
-  { name: "Next Js", icon: <SiNextdotjs className="text-white" /> },
-  { name: "Javascript", icon: <SiJavascript className="text-yellow-400" /> },
-  { name: "Java", icon: <FaJava className="text-red-500" /> },
-  { name: "React Js", icon: <FaReact className="text-cyan-400" /> },
-  { name: "React Native", icon: <TbBrandReactNative className="text-cyan-400" /> },
-  { name: "Nest Js", icon: <SiNestjs className="text-red-600" /> },
-  { name: "Quarkus", icon: <SiQuarkus className="text-blue-500" /> },
-  { name: "Ant design", icon: <SiAntdesign className="text-blue-400" /> },
-  { name: "Tailwind Css", icon: <SiTailwindcss className="text-cyan-400" /> },
-];
+import SkillsGrid from "./SkillsGrid"; // Centralized skills component
 
 const AboutSection = () => {
   return (
@@ -82,7 +59,7 @@ const AboutSection = () => {
             </div>
           </div>
 
-          {/* Right: Profile + Mentor (Socials Removed) */}
+          {/* Right: Profile + Mentor */}
           <div className="w-full md:w-5/12 flex flex-col items-center mt-8 md:mt-0 sticky top-24">
             {/* Profile Image with Glow */}
             <div className="relative group mb-10">
@@ -95,7 +72,6 @@ const AboutSection = () => {
             </div>
 
             <div className="flex flex-col w-full max-w-sm gap-4">
-              
               {/* Mentor Section */}
               <div className="pt-4 border-t border-gray-800 w-full text-left">
                 <div className="flex items-center gap-2 mb-2 text-primary">
@@ -131,25 +107,12 @@ const AboutSection = () => {
 
         {/* --- BOTTOM SECTION: Tools and Platforms --- */}
         <div className="w-full">
-          <h2 className="text-2xl md:text-3xl font-bold text-center mb-16 text-gray-200 border-t border-gray-900 pt-16">
+          <h2 className="text-2xl md:text-3xl font-bold text-center mb-16 text-gray-200 border-t border-gray-900 pt-16 uppercase tracking-wide">
             Tools and Platforms
           </h2>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-y-12 gap-x-8 justify-items-center">
-            {skills.map((skill, index) => (
-              <div 
-                key={index} 
-                className="flex items-center gap-3 group transition-transform duration-300 hover:-translate-y-1 cursor-default"
-              >
-                <div className="text-4xl md:text-5xl group-hover:scale-110 transition-transform duration-300">
-                  {skill.icon}
-                </div>
-                <span className="text-gray-400 font-medium text-lg group-hover:text-white transition-colors">
-                  {skill.name}
-                </span>
-              </div>
-            ))}
-          </div>
+          {/* Replaced manual mapping with centralized grid component */}
+          <SkillsGrid alignment="center" />
         </div>
 
       </div>
