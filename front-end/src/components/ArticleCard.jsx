@@ -1,17 +1,13 @@
 import React from "react";
-import { Card } from "react-bootstrap";
-import '../styles/navbar.css'
 
 const ArticleCard = ({ title, date, excerpt, link }) => {
   return (
-    <Card className="mb-3 shadow-sm article-card bg-light text-dark dark-mode-card">
-      <Card.Body>
-        <small className="text-muted">{date}</small>
-        <Card.Title className="mt-2">{title}</Card.Title>
-        <Card.Text className="text-muted">{excerpt}</Card.Text>
-        <a href={link} className="text-success fw-medium">Read article →</a>
-      </Card.Body>
-    </Card>
+    <div className="mb-6 p-6 bg-white dark:bg-dark-card rounded-xl shadow-sm border border-transparent hover:-translate-y-1 hover:shadow-lg hover:border-primary transition-all duration-300">
+      <small className="text-light-muted dark:text-dark-muted block mb-2">{date}</small>
+      <h3 className="text-xl font-bold text-light-text dark:text-dark-text mb-3">{title}</h3>
+      <p className="text-light-muted dark:text-dark-muted mb-4">{excerpt}</p>
+      <a href={link} className="text-primary font-medium hover:underline">Read article →</a>
+    </div>
   );
 };
 

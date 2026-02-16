@@ -1,109 +1,138 @@
 import React, { useState, useEffect } from "react";
-import "../styles/navbar.scss";
 import { Link, useLocation } from "react-router-dom";
-import { FaMoon, FaSun } from "react-icons/fa";
+import { FaMoon, FaSun, FaBars, FaTimes } from "react-icons/fa";
+import profilephoto from "../../public/profilephoto.jpg"; // Using the same image as Hero section
 
 const Navbar = () => {
   const location = useLocation();
-  const [active, setActive] = useState("Home");
   const [darkMode, setDarkMode] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  // Check for system's theme preference or use saved preference from localStorage
+  // Initialize Theme (Keeping your existing logic)
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme");
-    if (savedTheme) {
-      // If there's a saved theme in localStorage, use that
-      setDarkMode(savedTheme === "dark");
-      if (savedTheme === "dark") {
-        document.body.classList.add("dark-mode");
-      } else {
-        document.body.classList.remove("dark-mode");
-      }
+    const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    
+    if (savedTheme === "dark" || (!savedTheme && systemTheme)) {
+      setDarkMode(true);
+      document.documentElement.classList.add("dark");
     } else {
-      // If no saved theme, use system preference
-      const systemTheme = window.matchMedia(
-        "(prefers-color-scheme: dark)"
-      ).matches;
-      setDarkMode(systemTheme);
-      if (systemTheme) {
-        document.body.classList.add("dark-mode");
-      }
+      setDarkMode(false);
+      document.documentElement.classList.remove("dark");
     }
   }, []);
 
   const toggleMode = () => {
-    setDarkMode(!darkMode);
-    document.body.classList.toggle("dark-mode");
-    // Save the user's theme preference in localStorage
-    localStorage.setItem("theme", darkMode ? "light" : "dark");
+    const newMode = !darkMode;
+    setDarkMode(newMode);
+    if (newMode) {
+      document.documentElement.classList.add("dark");
+      localStorage.setItem("theme", "dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+      localStorage.setItem("theme", "light");
+    }
   };
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
-
-  const navLinks = ["Home", "About", "Articles", "Projects", "eMarc.ai"];
-
-  const getPath = (link) =>
-    link === navLinks ? "/" : `/${link.toLowerCase()}`;
-
-  const currentPath = location.pathname;
+  const navLinks = [
+    { name: "Home", path: "/" },
+    { name: "About", path: "/about" },
+    { name: "Articles", path: "/articles" },
+    { name: "Projects", path: "/projects" },
+    { name: "eMarc.ai", path: "/eMarc.ai" },
+  ];
 
   return (
-    <div className="container-fluid py-3">
-      <div className="d-flex justify-content-around align-items-center flex-wrap">
-        {/* Left: Logo and Hamburger */}
-        <div>
-          <span className="logo"> &lt;ebedi/&gt;</span>
-
-          <button
-            className="d-lg-none px-5 hamburger-btn"
-            onClick={toggleMenu}
-            aria-label="Toggle menu"
-          >
-            ☰
-          </button>
+    // Outer Wrapper for centering the floating pill
+    <div className="fixed top-6 inset-x-0 z-50 flex justify-center px-4">
+      
+      {/* The Floating Pill Container */}
+      <nav className="w-full max-w-5xl bg-[#0a0a0a] border border-white/10 rounded-full px-2 py-2 flex items-center justify-between shadow-2xl relative">
+        
+        {/* LEFT: Profile & Name */}
+        <div className="flex items-center gap-3 pl-2">
+            <Link to="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
+                <div className="relative w-10 h-10 overflow-hidden rounded-xl border border-white/20">
+                    <img 
+                        src={profilephoto} 
+                        alt="Profile" 
+                        className="w-full h-full object-cover"
+                    />
+                </div>
+                {/* Name - Hidden on very small screens */}
+                <span className="text-white font-bold tracking-wide text-sm uppercase hidden sm:block">
+                    Ebedi Meleck
+                </span>
+            </Link>
         </div>
 
-        {/* Navigation */}
-        <div
-          className={`nav-container rounded-pill shadow-sm p-2 px-3 ${
-            isMenuOpen
-              ? "d-flex flex-column align-item-center text-center w-100 b-drak"
-              : "d-none"
-          } d-lg-flex`}
-        >
-          {navLinks.map((link) => {
-            const path = getPath(link);
+        {/* CENTER: Navigation Links (Desktop) */}
+        <div className="hidden md:flex items-center gap-8 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+           {navLinks.map((link) => {
+             // Logic to determine active state
+             const isActive = link.name === "Home" 
+                ? location.pathname === "/" 
+                : location.pathname.startsWith(link.path);
 
-            return (
-              <Link
-                key={link}
-                to={path}
-                className={`nav-link-item px-3 text-decoration-none ${
-                  active === link ? "active" : ""
-                }`}
-                onClick={() => {
-                  setActive(link);
-                  setIsMenuOpen(false); // Close menu on click (mobile)
-                }}
-              >
-                {link}
-              </Link>
-            );
-          })}
+             return (
+               <Link
+                 key={link.name}
+                 to={link.path}
+                 className={`text-sm font-medium transition-colors duration-300 ${isActive ? "text-white" : "text-gray-400 hover:text-white"}`}
+               >
+                 {link.name}
+               </Link>
+             );
+           })}
         </div>
 
-        {/* Mode Toggle on the Right */}
-        <button className="mode-toggle-btn ms-3 " onClick={toggleMode}>
-          {darkMode ? (
-            <i className="bi bi-moon-fill"></i>
-          ) : (
-            <i className="bi bi-sun-fill"></i>
-          )}
-        </button>
-      </div>
+        {/* RIGHT: Resume & Actions */}
+        <div className="flex items-center gap-2 pr-1">
+            
+            {/* Theme Toggle (Subtle icon) */}
+            <button 
+                onClick={toggleMode}
+                className="p-2 rounded-full text-gray-400 hover:text-white transition-colors"
+                title="Toggle Theme"
+            >
+                {darkMode ? <FaMoon size={14}/> : <FaSun size={14}/>}
+            </button>
+
+            {/* Resume Button */}
+            <a 
+                href="https://drive.google.com/file/d/1Q2bWhvHSbnpE6l02ih23k0zASy2eGb9y/view?usp=sharing"
+                target="_blank"
+                rel="noreferrer"
+                className="bg-white text-black px-5 py-2.5 rounded-full text-sm font-bold hover:bg-gray-200 transition-colors"
+            >
+                Resume
+            </a>
+
+            {/* Mobile Hamburger (Visible on small screens) */}
+            <button
+                className="md:hidden text-white p-2 ml-1"
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+            >
+                {isMenuOpen ? <FaTimes size={20} /> : <FaBars size={20} />}
+            </button>
+        </div>
+
+        {/* Mobile Dropdown Menu */}
+         {isMenuOpen && (
+            <div className="absolute top-full left-0 right-0 mt-3 bg-[#0a0a0a] border border-white/10 rounded-2xl p-4 flex flex-col gap-2 shadow-xl md:hidden animate-in fade-in slide-in-from-top-2">
+                {navLinks.map((link) => (
+                    <Link
+                        key={link.name}
+                        to={link.path}
+                        className="text-gray-300 hover:text-white hover:bg-white/10 px-4 py-3 rounded-xl font-medium transition-all"
+                        onClick={() => setIsMenuOpen(false)}
+                    >
+                        {link.name}
+                    </Link>
+                ))}
+            </div>
+         )}
+      </nav>
     </div>
   );
 };

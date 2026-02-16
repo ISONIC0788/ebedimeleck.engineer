@@ -1,14 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';  // Import Link
-import "../styles/navbar.css"; // Your styles
-import { Card } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 function Footer() {
-  const FooteLink = [
+  const FooterLink = [
     { name: "About", href: "/about" },
-    { name: "Articles", href: "/Articles" },
-    { name: "Projects", href: "/Projects" },
-    { name:"eMarc.ai" , href:"/eMarc.ai"}
+    { name: "Articles", href: "/articles" },
+    { name: "Projects", href: "/projects" },
+    { name: "eMarc.ai", href: "/eMarc.ai" }
   ];
 
   const currentYear = new Date().getFullYear();
@@ -22,11 +20,9 @@ function Footer() {
       setTime(new Date());
       setColon((prev) => !prev);
     }, 1000);
-
     return () => clearInterval(timer);
   }, []);
 
-  // formatting time
   const formatTime = (date) => {
     const hours = String(date.getHours()).padStart(2, '0');
     const minutes = String(date.getMinutes()).padStart(2, '0');
@@ -36,42 +32,33 @@ function Footer() {
   const { hours, minutes } = formatTime(time);
 
   return (
-    <div>
-      <footer className='footer border-top'>
-        <div className='container d-flex justify-content-between align-items-center flex-wrap py-3'>
-          {/* Left links */}
-          <div>
-            {
-              FooteLink.map((link) => (
-                <Link
-                  key={link.name}  // Use Link instead of <a>
-                  to={link.href}  // Use `to` instead of href
-                  className="footer-link" // Optional class for styling
-                >
-                  {link.name}
-                </Link>
-              ))
-            }
-            <span className="fs-7 fw-bold ">
-              {hours}
-              <span
-                className="mx-1 text-success shadow-lg fw-bold "
-                style={{ opacity: colon ? 1 : 0 }}
-              >
-                :
-              </span>
-              {minutes}
-            </span>
-          </div>
-
-          {/* Right */}
-          <div className='text-end text-sm-start mt-2 mt-md-0 lead-text'>
-            {/* Text-muted */}
-            &copy; {currentYear} {developerName} All rights reserved
-          </div>
+    <footer className="border-t border-gray-200 dark:border-gray-700 bg-light-bg dark:bg-dark-bg transition-colors duration-300">
+      <div className="container mx-auto px-6 py-6 flex flex-col md:flex-row justify-between items-center gap-4">
+        {/* Links & Time */}
+        <div className="flex items-center gap-6 text-sm">
+          {FooterLink.map((link) => (
+            <Link
+              key={link.name}
+              to={link.href}
+              className="text-light-text dark:text-dark-text hover:text-primary transition-colors font-medium"
+            >
+              {link.name}
+            </Link>
+          ))}
+          
+          <span className="font-bold text-light-text dark:text-dark-text ml-4 flex items-center">
+            {hours}
+            <span className={`mx-1 text-primary transition-opacity duration-200 ${colon ? 'opacity-100' : 'opacity-0'}`}>:</span>
+            {minutes}
+          </span>
         </div>
-      </footer>
-    </div>
+
+        {/* Copyright */}
+        <div className="text-sm text-light-muted dark:text-dark-muted">
+          &copy; {currentYear} {developerName} All rights reserved
+        </div>
+      </div>
+    </footer>
   );
 }
 
