@@ -1,18 +1,16 @@
-import React from 'react'
-import Navbar from '../components/NavBar'
-import Footer from '../components/Footer'
-import PortfolioCard from '../components/PortfolioCard'
-
+import React from 'react';
+import Navbar from '../components/NavBar';
+import Footer from '../components/Footer';
+import AboutSection from '../components/AboutSection'; // Import the new component
 
 function About() {
   return (
-    <div>
+    <div className="bg-black min-h-screen">
         <Navbar/>
-           <PortfolioCard/>
+        <AboutSection/> 
         <Footer/>
-      
     </div>
   )
 }
 
-export default About
+export default About;
