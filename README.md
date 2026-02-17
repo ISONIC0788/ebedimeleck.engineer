@@ -1,12 +1,12 @@
 # Ebedi Meleck - Portfolio
 
-![Portfolio Preview](public/)
+
 
 This is the personal portfolio website of **Ebedi Meleck**, a Software Engineer and IT Student from Rwanda. It showcases my projects, skills, articles, and professional journey, built with a modern tech stack focusing on performance and interactivity.
 
 ## 🚀 Live Demo
 
-[Insert Live Link Here]
+![Live portfolio](https://ebedimeleck-engineer.vercel.app/)
 
 ## ✨ Features
 
