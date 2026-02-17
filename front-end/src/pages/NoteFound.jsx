@@ -3,16 +3,14 @@ import { Link } from "react-router-dom";
 
 function NoteFound() {
   return (
-    <div>
-      <div className="not-found container text-center d-flex flex-column justify-content-center align-items-center">
-      <h1 className="display-1 text-danger">404</h1>
-      <p className="lead mb-4">Oops! The page you’re looking for doesn’t exist.</p>
-      <Link to="/" className="btn btn-success">
+    <div className="min-h-screen flex flex-col justify-center items-center bg-light-bg dark:bg-dark-bg text-center px-4">
+      <h1 className="text-9xl font-bold text-red-500 mb-4">404</h1>
+      <p className="text-2xl text-light-muted dark:text-dark-muted mb-8">Oops! The page you’re looking for doesn’t exist.</p>
+      <Link to="/" className="px-6 py-3 bg-green-600 text-white rounded-full font-medium hover:bg-green-700 transition-colors shadow-lg">
         Go Back Home
       </Link>
-    </div>
     </div>
   )
 }
 
-export default NoteFound
+export default NoteFound;
