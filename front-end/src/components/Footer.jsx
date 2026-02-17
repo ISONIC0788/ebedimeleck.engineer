@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FaGithub, FaLinkedin, FaXTwitter, FaEnvelope } from "react-icons/fa6";
+import { motion } from 'framer-motion'; // 1. Import motion
 import DottedMapBackground from './DottedMapBackground';
 
 function Footer() {
@@ -33,36 +34,86 @@ function Footer() {
   };
   const { hours, minutes } = formatTime(time);
 
+  // 2. Define Animation Variants
+  const fadeInUp = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { 
+      opacity: 1, 
+      y: 0, 
+      transition: { duration: 0.6, ease: "easeOut" } 
+    }
+  };
+
+  const staggerContainer = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2
+      }
+    }
+  };
+
   return (
     <footer className="bg-black text-white">
       
       {/* 1. GET IN TOUCH SECTION (with Dotted Map Background) */}
       <div className="relative py-24 px-6 overflow-hidden flex flex-col items-center justify-center text-center min-h-[500px]">
         
-        {/* Background Layer */}
-        <DottedMapBackground />
+        {/* Background Layer - Fade in slowly */}
+        <motion.div 
+          className="absolute inset-0 w-full h-full"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 1.5 }}
+          viewport={{ once: true }}
+        >
+           <DottedMapBackground />
+        </motion.div>
 
         {/* Content Layer (Z-10 to sit above map) */}
-        <div className="relative z-10 max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-5xl font-extrabold mb-8 tracking-tight uppercase">
-              Get In Touch
-            </h2>
-            
-            <p className="text-gray-400 text-lg md:text-xl mb-12 leading-relaxed max-w-3xl mx-auto">
-              You can reach out to me anytime by clicking on the bottom right corner button to view my contact info or, click the button below. My inbox is always open, I will try my best to get back to you as soon as possible.
-            </p>
-            
-            <a 
-              href="mailto:ituzeebedi12@gmail.com"
-              className="inline-flex items-center gap-2 bg-white text-black px-8 py-4 rounded-full font-bold text-lg hover:scale-105 hover:bg-gray-100 transition-all duration-300 shadow-[0_0_20px_rgba(255,255,255,0.2)]"
+        {/* 3. Wrap content in Stagger Container */}
+        <motion.div 
+          className="relative z-10 max-w-4xl mx-auto"
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+        >
+            <motion.h2 
+              className="text-3xl md:text-5xl font-extrabold mb-8 tracking-tight uppercase"
+              variants={fadeInUp}
             >
-              <FaEnvelope /> Send an email
-            </a>
-        </div>
+              Get In Touch
+            </motion.h2>
+            
+            <motion.p 
+              className="text-gray-400 text-lg md:text-xl mb-12 leading-relaxed max-w-3xl mx-auto"
+              variants={fadeInUp}
+            >
+              You can reach out to me anytime by clicking on the bottom right corner button to view my contact info or, click the button below. My inbox is always open, I will try my best to get back to you as soon as possible.
+            </motion.p>
+            
+            <motion.div variants={fadeInUp}>
+              <a 
+                href="mailto:ituzeebedi12@gmail.com"
+                className="inline-flex items-center gap-2 bg-white text-black px-8 py-4 rounded-full font-bold text-lg hover:scale-105 hover:bg-gray-100 transition-all duration-300 shadow-[0_0_20px_rgba(255,255,255,0.2)]"
+              >
+                <FaEnvelope /> Send an email
+              </a>
+            </motion.div>
+        </motion.div>
       </div>
 
-      {/* 2. FOOTER LINKS BAR (Bottom) border-t border-gray-900 */}
-      <div className=" bg-[#050505] pt-10 pb-8">
+      {/* 2. FOOTER LINKS BAR (Bottom) */}
+      {/* 4. Simple fade in for the bottom bar */}
+      <motion.div 
+        className="bg-[#050505] pt-10 pb-8"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 0.8, delay: 0.2 }}
+        viewport={{ once: true }}
+      >
         <div className="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
           
           {/* Left: Links & Clock */}
@@ -91,7 +142,7 @@ function Footer() {
             &copy; {currentYear} <span className="text-gray-400 font-medium">{developerName}</span>. <br className="hidden md:block"/>All rights reserved.
           </div>
         </div>
-      </div>
+      </motion.div>
     </footer>
   );
 }

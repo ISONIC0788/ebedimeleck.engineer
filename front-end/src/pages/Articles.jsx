@@ -2,6 +2,7 @@ import React from 'react';
 import Navbar from '../components/NavBar';
 import Footer from '../components/Footer';
 import ArticleCard from '../components/ArticleCard';
+import { motion } from 'framer-motion'; // 1. Import motion
 
 function Articles() {
   const articlesData = [
@@ -37,6 +38,26 @@ function Articles() {
     },
   ];
 
+  // 2. Define Variants
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15 // Stagger delay
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { 
+      opacity: 1, 
+      y: 0, 
+      transition: { duration: 0.5, ease: "easeOut" } 
+    }
+  };
+
   return (
     <div className="bg-black min-h-screen text-white font-sans">
       <Navbar/>
@@ -44,7 +65,12 @@ function Articles() {
       <main className="container mx-auto px-6 pt-32 pb-20 max-w-4xl">
         
         {/* Header Section */}
-        <div className="mb-16">
+        <motion.div 
+          className="mb-16"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
           <div className="flex items-center gap-4 mb-4">
             <h1 className="text-4xl font-bold text-white">Blog</h1>
             <span className="px-3 py-1 rounded-full border border-gray-700 text-xs text-gray-400 bg-[#111]">
@@ -54,30 +80,42 @@ function Articles() {
           <p className="text-gray-400 text-lg">
             My thoughts on software development, life, and more.
           </p>
-        </div>
+        </motion.div>
 
-        {/* Article List */}
-        <div className="space-y-2">
+        {/* Article List - 3. Wrap in Motion div with stagger */}
+        <motion.div 
+          className="space-y-2"
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+        >
           {articlesData.map((article, index) => (
-            <ArticleCard
-              key={index}
-              index={index}
-              date={article.date}
-              title={article.title}
-              excerpt={article.excerpt}
-              link={article.link}
-            />
+            // 4. Wrap each card in a motion div
+            <motion.div key={index} variants={itemVariants}>
+              <ArticleCard
+                index={index}
+                date={article.date}
+                title={article.title}
+                excerpt={article.excerpt}
+                link={article.link}
+              />
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
         {/* Pagination (Visual only for now) */}
-        <div className="flex justify-between items-center mt-20 pt-10 border-t border-gray-800">
+        <motion.div 
+          className="flex justify-between items-center mt-20 pt-10 border-t border-gray-800"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.8 }}
+        >
             <span className="text-gray-500 text-sm">Page 1 of 2</span>
             <div className="flex gap-2">
                 <button className="px-4 py-2 border border-gray-700 rounded-lg text-sm text-gray-500 hover:text-white hover:border-gray-500 transition-colors disabled:opacity-50" disabled>Previous</button>
                 <button className="px-4 py-2 border border-gray-700 rounded-lg text-sm text-white hover:border-gray-500 transition-colors">Next</button>
             </div>
-        </div>
+        </motion.div>
 
       </main>
 

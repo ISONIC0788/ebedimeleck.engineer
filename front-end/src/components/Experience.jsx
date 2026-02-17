@@ -1,5 +1,6 @@
 import React from 'react';
 import { FiExternalLink, FiCheckCircle } from 'react-icons/fi';
+import { motion } from 'framer-motion'; // 1. Import motion
 
 const experiences = [
   {
@@ -30,20 +31,59 @@ const experiences = [
 ];
 
 const Experience = () => {
+  // 2. Define animation variants
+  const fadeInUp = {
+    hidden: { opacity: 0, y: 40 },
+    visible: { 
+      opacity: 1, 
+      y: 0, 
+      transition: { duration: 0.6, ease: "easeOut" } 
+    }
+  };
+
+  const staggerContainer = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.3 // Delay between each experience item appearing
+      }
+    }
+  };
+
   return (
     <section className="bg-black text-white py-24 px-6 border-t border-white/5">
       <div className="container mx-auto max-w-4xl">
         
         {/* Header Section */}
-        <div className="text-center mb-20">
+        {/* 3. Animate Header separately */}
+        <motion.div 
+          className="text-center mb-20"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.5 }}
+          variants={fadeInUp}
+        >
           <h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight">Experience</h2>
           <p className="text-gray-400 text-lg">Below is a detailed history of my technical professional work.</p>
-        </div>
+        </motion.div>
 
         {/* Experience List */}
-        <div className="space-y-20">
+        {/* 4. Use staggerContainer on the wrapper */}
+        <motion.div 
+          className="space-y-20"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.1 }}
+          variants={staggerContainer}
+        >
           {experiences.map((exp, index) => (
-            <div key={index} className="group">
+            /* 5. Animate each item */
+            <motion.div 
+              key={index} 
+              className="group"
+              variants={fadeInUp}
+            >
               
               {/* Company Info */}
               <div className="flex items-center gap-3 mb-2">
@@ -70,9 +110,9 @@ const Experience = () => {
                 ))}
               </ul>
 
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
       </div>
     </section>

@@ -7,6 +7,7 @@ import {
 } from "react-icons/si";
 import { FaJava, FaReact } from "react-icons/fa";
 import { TbBrandReactNative } from "react-icons/tb";
+import { motion } from "framer-motion"; // 1. Import motion
 
 // Centralized skills data
 const skills = [
@@ -36,11 +37,40 @@ const skills = [
 ];
 
 const SkillsGrid = ({ alignment = "center" }) => {
+  // 2. Define Animation Variants
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.05, // Fast ripple effect across the grid
+        delayChildren: 0.1
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, scale: 0.8, y: 15 },
+    visible: { 
+      opacity: 1, 
+      scale: 1, 
+      y: 0,
+      transition: { duration: 0.3, type: "spring", stiffness: 200 } 
+    }
+  };
+
   return (
-    <div className={`grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-y-10 gap-x-6 justify-items-center ${alignment === "left" ? "md:justify-items-start" : "md:justify-items-center"}`}>
+    <motion.div 
+      className={`grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-y-10 gap-x-6 justify-items-center ${alignment === "left" ? "md:justify-items-start" : "md:justify-items-center"}`}
+      variants={containerVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.1 }}
+    >
       {skills.map((skill, index) => (
-        <div 
+        <motion.div 
           key={index} 
+          variants={itemVariants}
           className="flex items-center gap-3 group transition-transform duration-300 hover:-translate-y-1 cursor-default"
         >
           <div className="text-3xl md:text-4xl group-hover:scale-110 transition-transform duration-300">
@@ -49,9 +79,9 @@ const SkillsGrid = ({ alignment = "center" }) => {
           <span className="text-gray-500 font-medium text-sm md:text-base group-hover:text-white transition-colors">
             {skill.name}
           </span>
-        </div>
+        </motion.div>
       ))}
-    </div>
+    </motion.div>
   );
 };
 
