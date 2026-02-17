@@ -1,11 +1,11 @@
 import React from "react";
 import { FaUserTie, FaGlobe, FaLinkedin } from "react-icons/fa";
-import { motion } from "framer-motion"; // 1. Import motion
+import { motion } from "framer-motion"; 
 import profilephoto from "../../public/profilephoto.jpg"; 
 import SkillsGrid from "./SkillsGrid"; 
 
 const AboutSection = () => {
-  // 2. Define Animation Variants
+  // Animation Variants
   const fadeInUp = {
     hidden: { opacity: 0, y: 30 },
     visible: { 
@@ -29,7 +29,7 @@ const AboutSection = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.15 // Staggers each paragraph
+        staggerChildren: 0.15 
       }
     }
   };
@@ -53,50 +53,59 @@ const AboutSection = () => {
               className="text-3xl md:text-5xl font-bold text-white leading-tight"
               variants={fadeInUp}
             >
-              Solopreneur, Software Engineer
+              Solopreneur | Software Engineer | IT Student
               <br />
-              <span className="text-primary">& IT Student</span>, shaping solutions with open-source.
+              <span className="text-primary text-2xl md:text-3xl block mt-2">
+                Shaping solutions with open-source
+              </span>
             </motion.h1>
             
             <motion.div className="text-lg text-gray-400 space-y-4 leading-relaxed" variants={staggerContainer}>
               <motion.p variants={fadeInUp}>
-                Ebedi Meleck is a passionate and visionary software developer from
-                Rwanda, dedicated to solving real-world problems through technology.
-                As a student of Information Technology, he is deeply focused on
-                innovation, community impact, and digital empowerment.
+                I’m Ebedi Meleck, a passionate and purpose-driven software developer from Rwanda. 
+                As an Information Technology student, I’m deeply focused on using technology to 
+                solve real-world problems, empower communities, and create meaningful digital impact.
               </motion.p>
+              
               <motion.p variants={fadeInUp}>
-                Every line of code I write is inspired by a deeper mission: to
-                create solutions that leave a lasting impact on my community...
+                Every line of code I write is driven by a deeper mission: to build solutions that 
+                matter and leave a lasting impact. For me, software development isn’t just about 
+                completing assignments—it’s about transforming ideas into tools that improve lives.
               </motion.p>
 
               <motion.p variants={fadeInUp}>
-                He's currently Building his empire in technology called{" "}
-                <strong className="text-white">Ebyte Code Labs</strong>, 
-                a tech hub that transforms ideas into meaningful solutions—whether it's job-matching platforms,
-                digital automation tools, or booking systems. His projects aren’t
-                just assignments—they’re stepping stones for real impact.
+                I’m currently building my technology empire, <strong className="text-white">Ebyte Code Labs</strong>—a 
+                growing tech hub where ideas turn into real solutions. From job-matching platforms and 
+                digital automation tools to booking systems and management applications, my projects are 
+                stepping stones toward real-world change.
               </motion.p>
+
               <motion.p variants={fadeInUp}>
-                With a growing command of languages like Java, JavaScript (React,
-                Vite), Node.js, and more, Meleck blends clean code with thoughtful
-                UI design, often incorporating light/dark mode, animations, and
-                responsive layouts. He’s not only a coder, but also a{" "}
-                <strong className="text-primary">problem-solver with purpose.</strong>{" "}
-                Code with Purpose. Create with Impact. Shaping Tomorrow One Line of Code at a Time.
+                With hands-on experience in Java, JavaScript (React, Vite), Node.js, and more, I focus 
+                on writing clean, maintainable code while crafting thoughtful user experiences. I enjoy 
+                building responsive interfaces with light/dark modes, smooth animations, and practical 
+                designs that put users first. I’m not just a coder—I’m a <strong className="text-primary">problem-solver with purpose.</strong>
               </motion.p>
+
               <motion.p variants={fadeInUp}>
-                Whether building systems like the Driver Trip Log, Car washing
-                Booking app, or contributing to open-source, Meleck’s journey is
-                marked by learning, building, and lifting others as he grows.
+                I’ve worked on systems like Driver Trip Log Systems, car washing booking platforms, 
+                and other real-life applications, while also contributing to open-source and continuously 
+                sharpening my skills. My journey is defined by learning, building, and lifting others as I grow.
               </motion.p>
 
               <motion.p 
                 className="italic border-l-4 border-primary pl-4 text-gray-300"
                 variants={fadeInUp}
               >
-                "I believe in the power of learning—every project, every challenge is
-                an opportunity to grow..."
+                "I believe in the power of learning—every project, every challenge, and every failure 
+                is an opportunity to improve."
+              </motion.p>
+
+              <motion.p 
+                className="font-bold text-white mt-4"
+                variants={fadeInUp}
+              >
+                Code with purpose. Create with impact. Shape tomorrow, one line of code at a time.
               </motion.p>
             </motion.div>
           </motion.div>
@@ -165,7 +174,6 @@ const AboutSection = () => {
             Tools and Platforms
           </h2>
 
-          {/* Centralized skills grid */}
           <SkillsGrid alignment="center" />
         </motion.div>
 
