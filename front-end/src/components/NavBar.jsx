@@ -140,7 +140,7 @@ const Navbar = () => {
             <motion.a 
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                href="https://drive.google.com/file/d/1Q2bWhvHSbnpE6l02ih23k0zASy2eGb9y/view?usp=sharing"
+                href="https://drive.google.com/file/d/1d0cHnoXIVc7RknTHsuh0tIoayeT1tiPz/view?usp=sharing"
                 target="_blank"
                 rel="noreferrer"
                 className="bg-white text-black px-5 py-2.5 rounded-full text-sm font-bold hover:bg-gray-200 transition-colors"
