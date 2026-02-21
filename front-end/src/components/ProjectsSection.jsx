@@ -1,34 +1,70 @@
 import React from 'react';
-import { FiLink } from 'react-icons/fi';
-import { motion } from 'framer-motion'; // 1. Import motion
+import { FiGithub, FiExternalLink } from 'react-icons/fi';
+import { motion } from 'framer-motion';
 import LoadingDots from './LoadingDots';
 
 // Projects updated with your specific technology stack
 const projects = [
   {
-    title: 'Driver Trip Log',
-    description: 'Manage and organize the records of the driver trip information.',
-    tags: ['Java', 'Spring Boot', 'MySQL', 'Thymeleaf'],
-    link: 'https://github.com/ISONIC0788/DRIVER_TRIP_LOG_V2.git',
-    image: 'https://via.placeholder.com/600x400/111111/FFFFFF?text=Driver+Trip+Log',
+    title: 'Ebyte Soft Lab',
+    description: 'Technology-focused software lab building open-source solutions and professional software services.',
+    tags: ['Open Source', 'Software Services', 'React', 'Node.js'],
+    github: '#', // Reserved
+    live: '#', // Coming Soon
+    image: 'https://via.placeholder.com/600x400/111111/FFFFFF?text=Ebyte+Soft+Lab',
+    comingSoon: true // Flag to identify this status
   },
   {
-    title: 'Net_Tracker',
-    description: "Command-line tool written in C that allows users to track network ports.",
-    tags: ['C Language', 'Networking', 'Linux'],
-    link: 'https://github.com/ISONIC0788/Net_Tracker.git',
-    image: 'https://via.placeholder.com/600x400/111111/FFFFFF?text=Net_Tracker',
+    title: 'Ebedi Meleck Portfolio',
+    description: 'Personal portfolio featuring interactive 3D elements, AI chat integration (Gemini), matrix rain effects, and a responsive dark UI.',
+    tags: ['React 19', 'Vite', 'Tailwind CSS', 'Framer Motion'],
+    github: '#', // Space reserved
+    live: 'https://ebedimeleck-engineer.vercel.app/',
+    image: 'https://via.placeholder.com/600x400/111111/FFFFFF?text=Personal+Portfolio',
   },
   {
-    title: 'Car Washing MS',
-    description: 'Allows customers to book services online and admins to manage staff.',
-    tags: ['JavaScript', 'Node.js', 'Express', 'MongoDB'],
-    link: 'https://github.com/ISONIC0788/CAR_WASHING_M_S',
-    image: 'https://via.placeholder.com/600x400/111111/FFFFFF?text=Car+Washing+MS',
+    title: 'Karebe Platform',
+    description: 'Full-stack movie & series management system with streaming, RBAC, and interpreter management.',
+    tags: ['React', 'Node.js', 'MongoDB', 'Express', 'Tailwind'],
+    github: 'https://github.com/Josephat-S/karebe.git',
+    live: 'https://karebe.onrender.com/',
+    image: 'https://via.placeholder.com/600x400/111111/FFFFFF?text=Karebe+Platform',
   },
+  {
+    title: 'Feedback Board',
+    description: 'Public feedback system allowing users to post, upvote, sort, and filter suggestions dynamically.',
+    tags: ['React', 'Node.js', 'Express', 'MongoDB', 'Tailwind'],
+    github: '#', // Space reserved
+    live: 'https://feedback-board-tau.vercel.app/',
+    image: 'https://via.placeholder.com/600x400/111111/FFFFFF?text=Feedback+Board',
+  },
+  {
+    title: 'Career Connect',
+    description: 'Comprehensive job portal with a Pure PHP MVC backend and React + Material UI frontend.',
+    tags: ['PHP', 'React', 'Material UI', 'MySQL'],
+    github: '#', // Space reserved
+    live: '#', // Space reserved
+    image: 'https://via.placeholder.com/600x400/111111/FFFFFF?text=Career+Connect',
+  },
+  {
+    title: 'MERN Chat App',
+    description: 'Real-time messaging app with Socket.io, JWT auth, online status, and file sharing.',
+    tags: ['MongoDB', 'Express', 'React', 'Node.js', 'Socket.io'],
+    github: '#', // Space reserved
+    live: '#', // Space reserved
+    image: 'https://via.placeholder.com/600x400/111111/FFFFFF?text=MERN+Chat+App',
+  },
+  {
+    title: 'Ebyte Spark CLI',
+    description: 'Node.js CLI tool for rapid Java file compilation and execution across platforms.',
+    tags: ['Node.js', 'CLI', 'Java', 'Automation'],
+    github: '#', // Space reserved
+    live: 'https://www.npmjs.com/package/ebyte-spark-j-c', // Inferred or reserved
+    image: 'https://via.placeholder.com/600x400/111111/FFFFFF?text=Ebyte+Spark+CLI',
+  }
 ];
 
-// 2. Define Animation Variants
+// Animation Variants
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
   visible: { 
@@ -43,7 +79,7 @@ const staggerContainer = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.2 // Cards appear 0.2s after each other
+      staggerChildren: 0.2
     }
   }
 };
@@ -64,7 +100,6 @@ function ProjectsSection() {
       <div className="container mx-auto px-6">
         
         {/* Header Section */}
-        {/* 3. Animate Header on Scroll */}
         <motion.div 
           className="text-center mb-20"
           initial="hidden"
@@ -74,12 +109,11 @@ function ProjectsSection() {
         >
            <h2 className="text-5xl font-extrabold mb-8 tracking-tight">Projects</h2>
            <p className="text-gray-400 max-w-2xl mx-auto text-lg leading-relaxed">
-             Below is some of the projects i have worked on.
+             A showcase of my recent work in software development, ranging from full-stack web applications to CLI tools.
            </p>
         </motion.div>
 
-        {/* Grid Layout with Refined Cards */}
-        {/* 4. Wrap Grid in Stagger Container */}
+        {/* Grid Layout */}
         <motion.div 
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10"
           initial="hidden"
@@ -90,8 +124,8 @@ function ProjectsSection() {
           {projects.map((project, idx) => (
             <motion.div 
               key={idx} 
-              variants={cardVariant} // 5. Apply Individual Card Animation
-              className="bg-[#111111] border border-white/5 rounded-3xl overflow-hidden hover:border-white/20 transition-all duration-500 group"
+              variants={cardVariant}
+              className="bg-[#111111] border border-white/5 rounded-3xl overflow-hidden hover:border-white/20 transition-all duration-500 group flex flex-col h-full"
             >
               {/* Project Image Preview */}
               <div className="relative overflow-hidden aspect-video border-b border-white/5">
@@ -100,32 +134,54 @@ function ProjectsSection() {
                    alt={project.title} 
                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
-                {/* Overlay Link */}
-                <a 
-                  href={project.link} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center"
-                >
-                   <FiLink className="text-white text-3xl" />
-                </a>
+                
+                {/* Overlay with Buttons */}
+                <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
+                  <a 
+                    href={project.github} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="p-3 bg-white/10 hover:bg-white/20 rounded-full backdrop-blur-sm transition-all transform hover:scale-110 border border-white/10"
+                    title="View Source Code"
+                  >
+                     <FiGithub className="text-white text-2xl" />
+                  </a>
+                  {project.comingSoon ? (
+                    <span className="px-4 py-2 bg-yellow-500/20 text-yellow-500 text-sm font-bold rounded-full border border-yellow-500/50 backdrop-blur-sm cursor-not-allowed">
+                      Coming Soon
+                    </span>
+                  ) : (
+                    <a 
+                      href={project.live} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="p-3 bg-white/10 hover:bg-white/20 rounded-full backdrop-blur-sm transition-all transform hover:scale-110 border border-white/10"
+                      title="View Live Demo"
+                    >
+                       <FiExternalLink className="text-white text-2xl" />
+                    </a>
+                  )}
+                </div>
               </div>
 
               {/* Card Content */}
-              <div className="p-8">
-                <h3 className="text-2xl font-bold mb-3 text-white transition-colors">
-                  {project.title}
-                </h3>
-                <p className="text-gray-400 mb-8 text-base leading-relaxed h-12 line-clamp-2">
+              <div className="p-8 flex flex-col flex-grow">
+                <div className="flex justify-between items-start mb-3">
+                  <h3 className="text-2xl font-bold text-white transition-colors">
+                    {project.title}
+                  </h3>
+                </div>
+                
+                <p className="text-gray-400 mb-6 text-base leading-relaxed line-clamp-3 flex-grow">
                   {project.description}
                 </p>
                 
                 {/* Tech Stack Badges */}
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-2 mt-auto">
                   {project.tags.map((tag, i) => (
                     <span 
                       key={i} 
-                      className="px-4 py-1.5 text-xs font-medium bg-white/5 text-gray-300 rounded-full border border-white/10"
+                      className="px-3 py-1 text-xs font-medium bg-white/5 text-gray-300 rounded-full border border-white/10"
                     >
                       {tag}
                     </span>
