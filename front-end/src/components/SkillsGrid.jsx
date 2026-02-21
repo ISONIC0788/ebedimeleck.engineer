@@ -3,11 +3,13 @@ import {
   SiTypescript, SiNextdotjs, SiJavascript, SiNestjs, SiQuarkus, 
   SiAntdesign, SiTailwindcss, SiC, SiPython, SiCplusplus, 
   SiPhp, SiNodedotjs, SiExpress, SiGo, SiMysql, 
-  SiDrizzle, SiSass, SiMui, SiMongodb, SiGit 
+  SiDrizzle, SiSass, SiMui, SiMongodb, SiGit,
+  SiAndroid, SiPostman, SiDocker, SiGithubactions, SiRadixui
 } from "react-icons/si";
 import { FaJava, FaReact } from "react-icons/fa";
-import { TbBrandReactNative } from "react-icons/tb";
-import { motion } from "framer-motion"; // 1. Import motion
+import { VscVscode } from "react-icons/vsc"; // Imported VS Code icon from VSC pack
+import { TbBrandReactNative, TbApi } from "react-icons/tb";
+import { motion } from "framer-motion"; 
 
 // Centralized skills data
 const skills = [
@@ -34,10 +36,20 @@ const skills = [
   { name: "Quarkus", icon: <SiQuarkus className="text-blue-500" /> },
   { name: "Ant design", icon: <SiAntdesign className="text-blue-400" /> },
   { name: "Tailwind Css", icon: <SiTailwindcss className="text-cyan-400" /> },
+  
+  // Added Skills
+  { name: "Android", icon: <SiAndroid className="text-green-500" /> },
+  { name: "VS Code", icon: <VscVscode className="text-blue-500" /> }, // Switched to VscVscode
+  { name: "Postman", icon: <SiPostman className="text-orange-500" /> },
+  { name: "Docker", icon: <SiDocker className="text-blue-400" /> },
+  { name: "REST API", icon: <TbApi className="text-gray-300" /> },
+  { name: "GitHub Actions", icon: <SiGithubactions className="text-blue-600" /> },
+  { name: "Java Swing", icon: <FaJava className="text-orange-600" /> },
+  { name: "Shadcn UI", icon: <SiRadixui className="text-white" /> }, // Used Radix UI as fallback
 ];
 
 const SkillsGrid = ({ alignment = "center" }) => {
-  // 2. Define Animation Variants
+  // Define Animation Variants
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
