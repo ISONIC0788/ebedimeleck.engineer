@@ -1,6 +1,7 @@
 import React from 'react';
 import { FiExternalLink, FiCheckCircle } from 'react-icons/fi';
-import { motion } from 'framer-motion'; // 1. Import motion
+import { motion } from 'framer-motion'; 
+import { AnimatedTextGenerate } from './AnimatedTextGenerate';
 
 const experiences = [
   {
@@ -31,7 +32,7 @@ const experiences = [
 ];
 
 const Experience = () => {
-  // 2. Define animation variants
+  // Define animation variants
   const fadeInUp = {
     hidden: { opacity: 0, y: 40 },
     visible: { 
@@ -56,7 +57,6 @@ const Experience = () => {
       <div className="container mx-auto max-w-4xl">
         
         {/* Header Section */}
-        {/* 3. Animate Header separately */}
         <motion.div 
           className="text-center mb-20"
           initial="hidden"
@@ -65,11 +65,20 @@ const Experience = () => {
           variants={fadeInUp}
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight">Experience</h2>
-          <p className="text-gray-400 text-lg">Below is a detailed history of my technical professional work.</p>
+          
+          {/* Header Text - Green color removed */}
+          <div className="flex justify-center min-h-[30px]">
+             <AnimatedTextGenerate 
+               text="Below is a detailed history of my technical professional work."
+               className="text-center"
+               textClassName="text-gray-400 text-lg"
+               speed={2}
+               blurEffect={true}
+             />
+          </div>
         </motion.div>
 
         {/* Experience List */}
-        {/* 4. Use staggerContainer on the wrapper */}
         <motion.div 
           className="space-y-20"
           initial="hidden"
@@ -78,7 +87,6 @@ const Experience = () => {
           variants={staggerContainer}
         >
           {experiences.map((exp, index) => (
-            /* 5. Animate each item */
             <motion.div 
               key={index} 
               className="group"
@@ -87,7 +95,7 @@ const Experience = () => {
               
               {/* Company Info */}
               <div className="flex items-center gap-3 mb-2">
-                <h3 className="text-2xl font-bold text-white group-hover:text-primary transition-colors">
+                <h3 className="text-2xl font-bold text-white group-hover:text-[#00bfa6] transition-colors">
                   {exp.company}
                 </h3>
                 <a href={exp.link} target="_blank" rel="noreferrer" className="text-gray-500 hover:text-white transition-colors">
@@ -100,12 +108,18 @@ const Experience = () => {
                 {exp.location} {exp.period}
               </div>
 
-              {/* Responsibility Points */}
+              {/* Responsibility Points - Now Animated */}
               <ul className="space-y-4">
                 {exp.points.map((point, i) => (
                   <li key={i} className="flex items-start gap-3 text-gray-400 leading-relaxed">
                     <FiCheckCircle className="mt-1 flex-shrink-0 text-white" size={16} />
-                    <span>{point}</span>
+                    <AnimatedTextGenerate 
+                      text={point}
+                      className="flex-1" // Ensures it takes available width
+                      textClassName="text-gray-400 leading-relaxed"
+                      speed={2} // Slightly faster for list items
+                      blurEffect={true}
+                    />
                   </li>
                 ))}
               </ul>
