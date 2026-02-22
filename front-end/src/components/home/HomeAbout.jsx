@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { FiArrowRight } from 'react-icons/fi';
 import { motion } from 'framer-motion'; 
 import SkillsGrid from '../SkillsGrid';
+// Import the local component
+import { AnimatedTextGenerate } from "../AnimatedTextGenerate";
 
 const HomeAbout = () => {
   // Animation Variants
@@ -24,6 +26,9 @@ const HomeAbout = () => {
       }
     }
   };
+
+  // Define the text to be animated
+  const bioText = `I’m Ebedi Meleck, a passionate and purpose-driven software engineer from Rwanda. As an Information Technology student, I’m deeply focused on using technology to solve real-world problems, empower communities, and create meaningful digital impact.`;
 
   return (
     <section className="bg-black py-24 border-t border-white/5 relative z-10">
@@ -53,9 +58,23 @@ const HomeAbout = () => {
 
           {/* Right: Summary Text */}
           <motion.div className="w-full md:w-2/3 space-y-6" variants={fadeInUp}>
-            <p className="text-gray-400 text-lg md:text-xl leading-relaxed">
-              I’m Ebedi Meleck, a passionate and purpose-driven software developer from Rwanda. As an Information Technology student, I’m deeply focused on using technology to solve real-world problems, empower communities, and create meaningful digital impact.
-            </p>
+            
+            {/* Animated Text Component */}
+            <div className="min-h-[120px]"> {/* Min-height prevents layout shift */}
+              <AnimatedTextGenerate
+                className="text-left"
+                // Using existing text color (gray-400)
+                textClassName="text-gray-400 text-lg md:text-xl leading-relaxed"
+                text={bioText}
+                blurEffect={true}
+                speed={2}
+                highlightWords={["Ebedi", "Meleck", ]}
+                // highlightWords={["Ebedi", "Meleck", "software", "developer", "Rwanda", "technology", "impact"]}
+                // Using existing accent color (#00bfa6)
+                highlightClassName="text-[#00bfa6] font-bold"
+              />
+            </div>
+
             <p className="text-gray-400 text-lg leading-relaxed">
               Every line of code I write is driven by a deeper mission: to build solutions that matter and leave a lasting impact. For me, software development isn’t just about completing assignments—it’s about transforming ideas into tools that improve lives.
             </p>
