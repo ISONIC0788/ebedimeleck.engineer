@@ -12,7 +12,7 @@ const projects = [
     github: '#', // Reserved
     live: '#', // Coming Soon
     image: 'https://via.placeholder.com/600x400/111111/FFFFFF?text=Ebyte+Soft+Lab',
-    comingSoon: true // Flag to identify this status
+    comingSoon: true
   },
   {
     title: 'Ebedi Meleck Portfolio',
@@ -127,49 +127,51 @@ function ProjectsSection() {
               variants={cardVariant}
               className="bg-[#111111] border border-white/5 rounded-3xl overflow-hidden hover:border-white/20 transition-all duration-500 group flex flex-col h-full"
             >
-              {/* Project Image Preview */}
+              {/* Project Image Preview - Removed Overlay */}
               <div className="relative overflow-hidden aspect-video border-b border-white/5">
                 <img 
                    src={project.image} 
                    alt={project.title} 
                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
-                
-                {/* Overlay with Buttons */}
-                <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
-                  <a 
-                    href={project.github} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="p-3 bg-white/10 hover:bg-white/20 rounded-full backdrop-blur-sm transition-all transform hover:scale-110 border border-white/10"
-                    title="View Source Code"
-                  >
-                     <FiGithub className="text-white text-2xl" />
-                  </a>
-                  {project.comingSoon ? (
-                    <span className="px-4 py-2 bg-yellow-500/20 text-yellow-500 text-sm font-bold rounded-full border border-yellow-500/50 backdrop-blur-sm cursor-not-allowed">
-                      Coming Soon
-                    </span>
-                  ) : (
-                    <a 
-                      href={project.live} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="p-3 bg-white/10 hover:bg-white/20 rounded-full backdrop-blur-sm transition-all transform hover:scale-110 border border-white/10"
-                      title="View Live Demo"
-                    >
-                       <FiExternalLink className="text-white text-2xl" />
-                    </a>
-                  )}
-                </div>
               </div>
 
               {/* Card Content */}
               <div className="p-8 flex flex-col flex-grow">
-                <div className="flex justify-between items-start mb-3">
+                {/* Title and Icons on the same line */}
+                <div className="flex justify-between items-start mb-4 gap-4">
                   <h3 className="text-2xl font-bold text-white transition-colors">
                     {project.title}
                   </h3>
+                  
+                  {/* Action Icons */}
+                  <div className="flex items-center gap-3 shrink-0 mt-1">
+                    <a 
+                      href={project.github} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-gray-400 hover:text-white transition-colors"
+                      title="View Source Code"
+                    >
+                       <FiGithub className="text-xl" />
+                    </a>
+                    
+                    {project.comingSoon ? (
+                      <span className="text-xs font-bold text-yellow-500 bg-yellow-500/10 px-2 py-1 rounded border border-yellow-500/20 whitespace-nowrap">
+                        Soon
+                      </span>
+                    ) : (
+                      <a 
+                        href={project.live} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="text-gray-400 hover:text-white transition-colors"
+                        title="View Live Demo"
+                      >
+                         <FiExternalLink className="text-xl" />
+                      </a>
+                    )}
+                  </div>
                 </div>
                 
                 <p className="text-gray-400 mb-6 text-base leading-relaxed line-clamp-3 flex-grow">
