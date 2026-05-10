@@ -21,6 +21,7 @@ function App() {
         <Route path='*' element={<NoteFound />} />
       </Routes>
       <SocialDock /> {/* Place it here so it's visible on every page */}
+      {/* Place it here so it's visible on every page */}
     </BrowserRouter>
   )
 }
