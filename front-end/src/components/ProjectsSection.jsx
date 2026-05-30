@@ -9,58 +9,99 @@ const projects = [
     title: 'Ebyte Soft Lab',
     description: 'Technology-focused software lab building open-source solutions and professional software services.',
     tags: ['Open Source', 'Software Services', 'React', 'Node.js'],
-    github: '#', // Reserved
-    live: '#', // Coming Soon
-    image: 'https://via.placeholder.com/600x400/111111/FFFFFF?text=Ebyte+Soft+Lab',
-    comingSoon: true
+    github: '#',
+    repoStatus: 'Private',
+    live: 'https://ebytesoftlab.dev/',
+    image: '/ebytesoftlab.png',
   },
   {
     title: 'Ebedi Meleck Portfolio',
     description: 'Personal portfolio featuring interactive 3D elements, AI chat integration (Gemini), matrix rain effects, and a responsive dark UI.',
     tags: ['React 19', 'Vite', 'Tailwind CSS', 'Framer Motion'],
-    github: '#', // Space reserved
+    github: 'https://github.com/ISONIC0788/ebedimeleck.engineer',
     live: 'https://ebedimeleck-engineer.vercel.app/',
-    image: 'https://via.placeholder.com/600x400/111111/FFFFFF?text=Personal+Portfolio',
+    image: '/portfolioweb.png',
   },
   {
     title: 'Karebe Platform',
     description: 'Full-stack movie & series management system with streaming, RBAC, and interpreter management.',
     tags: ['React', 'Node.js', 'MongoDB', 'Express', 'Tailwind'],
-    github: 'https://github.com/Josephat-S/karebe.git',
-    live: 'https://karebe.onrender.com/',
-    image: 'https://via.placeholder.com/600x400/111111/FFFFFF?text=Karebe+Platform',
+    github: '#',
+    repoStatus: 'Private',
+    live: 'https://www.karebe.online/',
+    image: '/karebe_web.png',
+  },
+  {
+    title: 'CropConnect',
+    description: 'A phygital agricultural marketplace connecting smallholder farmers with wholesale buyers through SMS, USSD, and a web dashboard.',
+    tags: ['React', 'TypeScript', 'Tailwind CSS', 'Spring Boot', 'PostGIS'],
+    github: 'https://github.com/ISONIC0788/CropConnect-frontend',
+    live: 'https://crop-connect-frontend.vercel.app/',
+    image: '/cropconnect.png',
+  },
+  {
+    title: 'Opusify CLI',
+    description: 'A full-stack scaffold engine that generates production-ready Next.js and Vite apps with interactive templates, design systems, and dependency injection.',
+    tags: ['CLI', 'Scaffolding', 'Next.js', 'Vite', 'TypeScript'],
+    github: 'https://github.com/Ebyte-Lab/opusify-cli',
+    live: 'https://www.npmjs.com/package/opusify-cli',
+    image: '/opusify_npm.png',
+  },
+  {
+    title: 'Umurava Screener',
+    description: 'An AI-powered recruiter workspace for screening applicants, parsing job descriptions, ranking candidates, and keeping hiring decisions human-in-the-loop.',
+    tags: ['Next.js', 'React', 'Tailwind CSS', 'Redux Toolkit', 'MongoDB'],
+    github: 'https://github.com/Josephat-S/umurava-screener',
+    live: 'https://umurava-screener.vercel.app/login',
+    image: '/umuravascreen.png',
   },
   {
     title: 'Feedback Board',
     description: 'Public feedback system allowing users to post, upvote, sort, and filter suggestions dynamically.',
     tags: ['React', 'Node.js', 'Express', 'MongoDB', 'Tailwind'],
-    github: '#', // Space reserved
+    github: 'https://github.com/ISONIC0788/Feedback-Board',
     live: 'https://feedback-board-tau.vercel.app/',
-    image: 'https://via.placeholder.com/600x400/111111/FFFFFF?text=Feedback+Board',
+    image: '/feedback_app.png',
   },
   {
     title: 'Career Connect',
     description: 'Comprehensive job portal with a Pure PHP MVC backend and React + Material UI frontend.',
     tags: ['PHP', 'React', 'Material UI', 'MySQL'],
-    github: '#', // Space reserved
-    live: '#', // Space reserved
-    image: 'https://via.placeholder.com/600x400/111111/FFFFFF?text=Career+Connect',
+    github: 'https://github.com/ISONIC0788/JobPortal-2',
+    live: '#',
+    image: '/carrier_connect.png',
   },
   {
-    title: 'MERN Chat App',
-    description: 'Real-time messaging app with Socket.io, JWT auth, online status, and file sharing.',
-    tags: ['MongoDB', 'Express', 'React', 'Node.js', 'Socket.io'],
-    github: '#', // Space reserved
-    live: '#', // Space reserved
-    image: 'https://via.placeholder.com/600x400/111111/FFFFFF?text=MERN+Chat+App',
+    title: 'Driver Trip Log',
+    description: 'A PHP and MySQL trip logging system for organizing driver trip records faster and more accurately, with PDF and Excel report generation.',
+    tags: ['PHP', 'MySQL', 'PDF Reports', 'Excel Export'],
+    github: 'https://github.com/ISONIC0788/DRIVER_TRIP_LOG_V2',
+    live: '#',
+    image: '/DRIVER_TRIP_LOG_V2.jpeg',
+  },
+  {
+    title: 'Quick Chat',
+    description: 'Real-Time MERN Stack Chat Application with Socket.io for instant messaging, online user status, private conversations, unread tracking, and profile management.',
+    tags: ['React', 'Socket.io', 'MongoDB', 'Realtime'],
+    github: 'https://github.com/ISONIC0788/QuickChat',
+    live: '#',
+    image: '/quickchat.jpeg',
+  },
+  {
+    title: 'Ebyte Spark Java Compiler CLI',
+    description: 'A lightweight command-line tool that checks Java availability and compiles .java files quickly with clear logs for education, automation, and Java learning workflows.',
+    tags: ['Node.js', 'Java', 'CLI', 'Automation', 'Cross-platform'],
+    github: 'https://github.com/ISONIC0788/ebyte-spark-j-c',
+    live: 'https://www.npmjs.com/package/ebyte-spark-j-c',
+    image: '/ebyte_spark_j.png',
   },
   {
     title: 'Ebyte Spark CLI',
     description: 'Node.js CLI tool for rapid Java file compilation and execution across platforms.',
     tags: ['Node.js', 'CLI', 'Java', 'Automation'],
-    github: '#', // Space reserved
+    github: 'https://github.com/ISONIC0788/ebyte-spark-j-c',
     live: 'https://www.npmjs.com/package/ebyte-spark-j-c', // Inferred or reserved
-    image: 'https://via.placeholder.com/600x400/111111/FFFFFF?text=Ebyte+Spark+CLI',
+    image: '/ebyte_spark_j.png',
   }
 ];
 
@@ -137,7 +178,7 @@ function ProjectsSection() {
               </div>
 
               {/* Card Content */}
-              <div className="p-8 flex flex-col flex-grow">
+              <div className="p-8 flex flex-col grow">
                 {/* Title and Icons on the same line */}
                 <div className="flex justify-between items-start mb-4 gap-4">
                   <h3 className="text-2xl font-bold text-white transition-colors">
@@ -146,21 +187,27 @@ function ProjectsSection() {
                   
                   {/* Action Icons */}
                   <div className="flex items-center gap-3 shrink-0 mt-1">
-                    <a 
-                      href={project.github} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="text-gray-400 hover:text-white transition-colors"
-                      title="View Source Code"
-                    >
-                       <FiGithub className="text-xl" />
-                    </a>
+                    {project.github && project.github !== '#' ? (
+                      <a 
+                        href={project.github} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="text-gray-400 hover:text-white transition-colors"
+                        title="View Source Code"
+                      >
+                         <FiGithub className="text-xl" />
+                      </a>
+                    ) : project.repoStatus ? (
+                      <span className="text-xs font-bold text-sky-400 bg-sky-400/10 px-2 py-1 rounded border border-sky-400/20 whitespace-nowrap">
+                        {project.repoStatus}
+                      </span>
+                    ) : null}
                     
                     {project.comingSoon ? (
                       <span className="text-xs font-bold text-yellow-500 bg-yellow-500/10 px-2 py-1 rounded border border-yellow-500/20 whitespace-nowrap">
                         Soon
                       </span>
-                    ) : (
+                    ) : project.live && project.live !== '#' ? (
                       <a 
                         href={project.live} 
                         target="_blank" 
@@ -170,11 +217,11 @@ function ProjectsSection() {
                       >
                          <FiExternalLink className="text-xl" />
                       </a>
-                    )}
+                    ) : null}
                   </div>
                 </div>
                 
-                <p className="text-gray-400 mb-6 text-base leading-relaxed line-clamp-3 flex-grow">
+                <p className="text-gray-400 mb-6 text-base leading-relaxed line-clamp-3 grow">
                   {project.description}
                 </p>
                 
